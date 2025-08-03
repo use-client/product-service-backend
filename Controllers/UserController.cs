@@ -14,7 +14,7 @@ namespace ProductService.Controllers
         public async Task<IActionResult> GetAllUsers()
         {
             var users = await _userRepository.GetAllUsersAsync();
-            return Ok(users);
+            return Ok(SuccessResponse< IEnumerable<User>>.Create(users));
         }
     }
 }
